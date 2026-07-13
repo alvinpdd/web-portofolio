@@ -412,60 +412,61 @@ const Hero = () => {
             </motion.div>
             
             <motion.h1 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight"
-          >
-            Hai, saya <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">
-              {DATA.profile.name}
-            </span>
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg md:text-xl text-neutral-300 mb-10 max-w-lg"
-          >
-            {DATA.profile.role}. Mengkhususkan diri dalam Power System Analysis dan Automasi Industri berbasis data.
-          </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
-          >
-            {/* Tombol Lihat Proyek: Dibuat putih agar menonjol di background hitam */}
-            <a href="#proyek" className="px-8 py-4 bg-white text-neutral-900 font-bold rounded-full hover:scale-105 transition-transform flex items-center gap-2 shadow-lg shadow-white/10">
-              Lihat Proyek <ChevronRight size={18} />
-            </a>
-            
-            {/* Tombol Download CV: Dibuat gelap dengan garis tepi agar elegan */}
-            <a 
-              href="/CV.pdf" 
-              download="CV_Alvin_Christofer_Pardede.pdf" 
-              className="px-8 py-4 bg-neutral-900 text-white border border-neutral-700 font-semibold rounded-full hover:bg-neutral-800 transition-colors flex items-center gap-2"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
+              className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight"
             >
-              Download CV <Download size={18} />
-            </a>
+              Hai, saya <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">
+                {DATA.profile.name}
+              </span>
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-lg md:text-xl text-neutral-300 mb-10 max-w-lg"
+            >
+              {DATA.profile.role}. Mengkhususkan diri dalam Power System Analysis dan Automasi Industri berbasis data.
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
+            >
+              {/* Tombol Lihat Proyek: Dibuat putih agar menonjol di background hitam */}
+              <a href="#proyek" className="px-8 py-4 bg-white text-neutral-900 font-bold rounded-full hover:scale-105 transition-transform flex items-center gap-2 shadow-lg shadow-white/10">
+                Lihat Proyek <ChevronRight size={18} />
+              </a>
+              
+              {/* Tombol Download CV: Dibuat gelap dengan garis tepi agar elegan */}
+              <a 
+                href="/CV.pdf" 
+                download="CV_Alvin_Christofer_Pardede.pdf" 
+                className="px-8 py-4 bg-neutral-900 text-white border border-neutral-700 font-semibold rounded-full hover:bg-neutral-800 transition-colors flex items-center gap-2"
+              >
+                Download CV <Download size={18} />
+              </a>
+            </motion.div>
           </motion.div>
-        </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}
-          className="w-full lg:w-1/2 flex justify-center relative"
-        >
-          <div className="relative w-72 h-72 md:w-96 md:h-96">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-400 blur-2xl opacity-20 animate-pulse" />
-            <img 
-              src={encodeURI(DATA.profile.photo)} 
-              alt={DATA.profile.name} 
-              className="relative w-full h-full object-cover rounded-[2rem] shadow-2xl"
-              onError={(e: any) => e.target.src = 'https://placehold.co/400x400/1e293b/white?text=Profile'}
-            />
-          </div>
-        </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}
+            className="w-full lg:w-1/2 flex justify-center relative"
+          >
+            <div className="relative w-72 h-72 md:w-96 md:h-96">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-400 blur-2xl opacity-20 animate-pulse" />
+              <img 
+                src={encodeURI(DATA.profile.photo)} 
+                alt={DATA.profile.name} 
+                className="relative w-full h-full object-cover rounded-[2rem] shadow-2xl"
+                onError={(e: any) => e.target.src = 'https://placehold.co/400x400/1e293b/white?text=Profile'}
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const InfiniteMarquee = () => {
   const keywords = ["Power System Analysis", "Industrial Automation", "PLC Programming", "ETAP", "Python", "Problem Solving", "Leadership", "Continuous Learning", "HMI Design", "Short Circuit Analysis"];
