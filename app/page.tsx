@@ -854,24 +854,22 @@ const Preloader = ({ onComplete }) => {
 
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
-  
-  // State isDark dan useEffect untuk dark mode sudah dihapus dari sini
 
-  // Paksa background HTML dan body menjadi putih agar aman
+  // Paksa background menjadi GELAP (Dark Mode) permanen
   useEffect(() => {
-    document.documentElement.classList.remove('dark');
-    document.body.style.backgroundColor = '#ffffff';
-    document.body.style.color = '#000000';
+    document.documentElement.classList.add('dark');
+    document.body.style.backgroundColor = '#0a0a0a';
+    document.body.style.color = '#ffffff';
   }, []);
 
   return (
-    // Class pembungkus disederhanakan, langsung pakai bg-white
-    <div className="min-h-screen font-sans selection:bg-blue-500/30 bg-white">
+    // Class pembungkus diubah menjadi dark dan bg-[#0a0a0a]
+    <div className="min-h-screen font-sans selection:bg-blue-500/30 dark bg-[#0a0a0a] text-white">
       <style dangerouslySetInnerHTML={{__html: `
         html { scroll-behavior: smooth; }
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 5px; }
       `}} />
       
       <AnimatePresence>
@@ -880,7 +878,6 @@ export default function Portfolio() {
 
       {!loading && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-          {/* Props isDark dan toggleTheme dihapus karena sudah tidak dipakai */}
           <Navbar /> 
           <main>
             <Hero />
