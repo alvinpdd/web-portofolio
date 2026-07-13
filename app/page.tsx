@@ -182,14 +182,14 @@ const staggerContainer = {
   }
 };
 
-const SectionHeading = ({ children, subtitle }) => (
+const SectionHeading = ({ children, subtitle }: any) => (
   <div className="mb-12 md:mb-20">
     <motion.h2 
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white"
+      className="text-3xl md:text-5xl font-bold tracking-tight text-white"
     >
       {children}
     </motion.h2>
@@ -199,7 +199,7 @@ const SectionHeading = ({ children, subtitle }) => (
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="mt-4 text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl"
+        className="mt-4 text-neutral-400 text-lg max-w-2xl"
       >
         {subtitle}
       </motion.p>
@@ -209,7 +209,7 @@ const SectionHeading = ({ children, subtitle }) => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="h-1 w-20 bg-blue-600 dark:bg-blue-500 mt-6 rounded-full"
+      className="h-1 w-20 bg-blue-500 mt-6 rounded-full"
     />
   </div>
 );
@@ -500,22 +500,22 @@ const About = () => (
           variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}
           className="lg:col-span-7 space-y-10"
         >
-          <motion.p variants={fadeInUp} className="text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">
+          <motion.p variants={fadeInUp} className="text-lg leading-relaxed text-neutral-300">
             {DATA.profile.summary}
           </motion.p>
           
           <motion.div variants={fadeInUp} className="space-y-6">
-            <h3 className="text-2xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+            <h3 className="text-2xl font-bold text-white flex items-center gap-2">
               <GraduationCap className="text-blue-500" /> Pendidikan
             </h3>
             <div className="space-y-6">
               {DATA.education.map(edu => (
-                <div key={edu.id} className="relative pl-6 border-l-2 border-neutral-200 dark:border-neutral-800">
-                  <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-1.5 ring-4 ring-white dark:ring-[#0a0a0a]" />
-                  <h4 className="text-lg font-bold text-neutral-900 dark:text-white">{edu.institution}</h4>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium">{edu.degree}</p>
-                  {edu.period && <p className="text-sm text-neutral-500 mt-1">{edu.period}</p>}
-                  {edu.gpa && <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mt-2">IPK: {edu.gpa}</p>}
+                <div key={edu.id} className="relative pl-6 border-l-2 border-neutral-700">
+                  <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-1.5 ring-4 ring-[#0a0a0a]" />
+                  <h4 className="text-lg font-bold text-white">{edu.institution}</h4>
+                  <p className="text-blue-400 font-medium">{edu.degree}</p>
+                  {edu.period && <p className="text-sm text-neutral-400 mt-1">{edu.period}</p>}
+                  {edu.gpa && <p className="text-sm font-semibold text-neutral-300 mt-2">IPK: {edu.gpa}</p>}
                 </div>
               ))}
             </div>
@@ -598,26 +598,26 @@ const Experience = () => (
               </div>
               
               <div className="md:col-span-4 relative pb-12 md:pb-0">
-                <div className="absolute left-[-2rem] top-2 h-full w-px bg-neutral-200 dark:bg-neutral-800 md:hidden" />
-                <div className="absolute left-[-2.35rem] md:left-[-2.5rem] top-1.5 w-3 h-3 bg-white dark:bg-[#0a0a0a] border-2 border-blue-500 rounded-full group-hover:bg-blue-500 transition-colors md:hidden" />
+                <div className="absolute left-[-2rem] top-2 h-full w-px bg-neutral-800 md:hidden" />
+                <div className="absolute left-[-2.35rem] md:left-[-2.5rem] top-1.5 w-3 h-3 bg-[#0a0a0a] border-2 border-blue-500 rounded-full group-hover:bg-blue-500 transition-colors md:hidden" />
                 
                 <GlassCard className="!p-6 md:!p-8 group-hover:border-blue-500/30 transition-colors">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
                     <div>
-                      <h3 className="text-xl font-bold text-neutral-900 dark:text-white">{exp.role}</h3>
-                      <p className="text-blue-600 dark:text-blue-400 font-medium text-lg">{exp.company}</p>
+                      <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                      <p className="text-blue-400 font-medium text-lg">{exp.company}</p>
                     </div>
                     <div className="text-left md:text-right">
-                      <span className="inline-block px-3 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-full text-xs font-semibold text-neutral-600 dark:text-neutral-400 mb-1 md:hidden">
+                      <span className="inline-block px-3 py-1 bg-neutral-800 rounded-full text-xs font-semibold text-neutral-400 mb-1 md:hidden">
                         {exp.period}
                       </span>
-                      <p className="text-sm text-neutral-500 flex items-center md:justify-end gap-1 mt-1">
+                      <p className="text-sm text-neutral-400 flex items-center md:justify-end gap-1 mt-1">
                         <MapPin size={14}/> {exp.location}
                       </p>
                     </div>
                   </div>
                   
-                  <ul className="space-y-2 text-neutral-600 dark:text-neutral-300 text-sm md:text-base leading-relaxed">
+                  <ul className="space-y-2 text-neutral-300 text-sm md:text-base leading-relaxed">
                     {exp.achievements.map((ach, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-blue-500 mt-1">▹</span> {ach}
@@ -710,24 +710,24 @@ const Certificates = () => (
             variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: index * 0.1 }}
           >
             <GlassCard className="h-full flex flex-col group hover:border-blue-500/50">
-              <div className="mb-4 w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="mb-4 w-12 h-12 rounded-2xl bg-blue-900/30 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Award size={24} />
               </div>
-              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2 leading-tight">
+              <h3 className="text-lg font-bold text-white mb-2 leading-tight">
                 {cert.name}
               </h3>
-              <p className="text-neutral-500 text-sm mb-4">{cert.issuer}</p>
+              <p className="text-neutral-400 text-sm mb-4">{cert.issuer}</p>
               
-              <div className="mt-auto pt-4 border-t border-neutral-100 dark:border-neutral-800/50 space-y-1">
+              <div className="mt-auto pt-4 border-t border-neutral-800/50 space-y-1">
                 <p className="text-xs text-neutral-400 flex justify-between">
-                  <span>Diterbitkan:</span> <span className="font-medium text-neutral-700 dark:text-neutral-300">{cert.date}</span>
+                  <span>Diterbitkan:</span> <span className="font-medium text-neutral-300">{cert.date}</span>
                 </p>
                 <p className="text-xs text-neutral-400 flex justify-between">
-                  <span>ID:</span> <span className="font-mono text-neutral-700 dark:text-neutral-300">{cert.credentialId}</span>
+                  <span>ID:</span> <span className="font-mono text-neutral-300">{cert.credentialId}</span>
                 </p>
                 {cert.score && (
                   <p className="text-xs text-neutral-400 flex justify-between">
-                    <span>Skor:</span> <span className="font-bold text-blue-600 dark:text-blue-400">{cert.score}</span>
+                    <span>Skor:</span> <span className="font-bold text-blue-400">{cert.score}</span>
                   </p>
                 )}
               </div>
