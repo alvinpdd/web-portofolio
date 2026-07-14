@@ -344,7 +344,7 @@ const ProjectModal = ({ project, isOpen, onClose }: any) => {
   );
 };
 
-const Navbar = ({ isDark, toggleTheme }) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -358,22 +358,22 @@ const Navbar = ({ isDark, toggleTheme }) => {
   return (
     <header className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'}`}>
       <div className="container mx-auto px-4 md:px-6">
-        <div className={`flex items-center justify-between mx-auto max-w-6xl rounded-full px-6 py-3 transition-all duration-300 ${scrolled ? 'bg-white/70 dark:bg-neutral-900/70 backdrop-blur-lg border border-neutral-200 dark:border-neutral-800 shadow-sm' : 'bg-transparent'}`}>
+        <div className={`flex items-center justify-between mx-auto max-w-6xl rounded-full px-6 py-3 transition-all duration-300 ${scrolled ? 'bg-neutral-900/70 backdrop-blur-lg border border-neutral-800 shadow-sm' : 'bg-transparent'}`}>
           
-          <a href="#" className="text-xl font-bold tracking-tighter text-neutral-900 dark:text-white flex items-center gap-2">
+          <a href="#" className="text-xl font-bold tracking-tighter text-white flex items-center gap-2">
             <span className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs">ACP</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map(link => (
-              <a key={link} href={`#${link.toLowerCase()}`} className="text-sm font-medium text-neutral-600 hover:text-blue-600 dark:text-neutral-300 dark:hover:text-white transition-colors">
+              <a key={link} href={`#${link.toLowerCase()}`} className="text-sm font-medium text-neutral-300 hover:text-white transition-colors">
                 {link}
               </a>
             ))}
           </nav>
 
           <div className="flex items-center gap-4">
-                        <a href="#kontak" className="hidden md:flex items-center gap-2 px-5 py-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-sm font-medium rounded-full hover:scale-105 transition-transform">
+            <a href="#kontak" className="hidden md:flex items-center gap-2 px-5 py-2 bg-white text-neutral-900 text-sm font-bold rounded-full hover:scale-105 transition-transform shadow-lg shadow-white/10">
               Hubungi Saya
             </a>
           </div>
