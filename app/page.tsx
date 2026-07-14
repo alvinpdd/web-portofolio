@@ -527,22 +527,22 @@ const About = () => (
 );
 
 const Skills = () => (
-  <section id="keahlian" className="py-24 bg-neutral-50 dark:bg-neutral-900/30">
+  <section id="keahlian" className="py-24">
     <div className="container mx-auto px-6 max-w-6xl">
       <SectionHeading subtitle="Kompetensi teknis dan perangkat lunak yang dikuasai">Keahlian</SectionHeading>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <GlassCard className="h-full border-t-4 border-t-blue-500">
-            <h3 className="text-xl font-bold mb-6 text-neutral-900 dark:text-white">Technical Skills</h3>
+            <h3 className="text-xl font-bold mb-6 text-white">Technical Skills</h3>
             <ul className="space-y-5">
               {DATA.skills.technical.map((skill, i) => (
                 <li key={i} className="group">
-                  <div className="flex items-center gap-3 text-neutral-900 dark:text-white font-medium mb-1">
-                    <span className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">{skill.icon}</span>
+                  <div className="flex items-center gap-3 text-white font-medium mb-1">
+                    <span className="p-2 bg-blue-900/30 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">{skill.icon}</span>
                     {skill.name}
                   </div>
-                  <p className="text-sm text-neutral-500 pl-11">{skill.desc}</p>
+                  <p className="text-sm text-neutral-400 pl-11">{skill.desc}</p>
                 </li>
               ))}
             </ul>
@@ -551,10 +551,10 @@ const Skills = () => (
 
         <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.1 }}>
           <GlassCard className="h-full border-t-4 border-t-indigo-500">
-            <h3 className="text-xl font-bold mb-6 text-neutral-900 dark:text-white">Software & Tools</h3>
+            <h3 className="text-xl font-bold mb-6 text-white">Software & Tools</h3>
             <div className="flex flex-wrap gap-3">
               {DATA.skills.software.map((skill, i) => (
-                <div key={i} className="flex items-center gap-2 px-3 py-2 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:border-indigo-500 transition-colors">
+                <div key={i} className="flex items-center gap-2 px-3 py-2 bg-neutral-800 rounded-xl border border-neutral-700 text-sm font-medium text-neutral-300 hover:border-indigo-500 transition-colors">
                   {skill.icon} {skill.name}
                 </div>
               ))}
@@ -564,10 +564,10 @@ const Skills = () => (
 
         <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}>
           <GlassCard className="h-full border-t-4 border-t-purple-500">
-            <h3 className="text-xl font-bold mb-6 text-neutral-900 dark:text-white">Soft Skills</h3>
+            <h3 className="text-xl font-bold mb-6 text-white">Soft Skills</h3>
             <ul className="space-y-3">
               {DATA.skills.soft.map((skill, i) => (
-                <li key={i} className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300">
+                <li key={i} className="flex items-center gap-3 text-neutral-300">
                   <div className="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0" />
                   {skill}
                 </li>
@@ -638,7 +638,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="proyek" className="py-24 bg-neutral-50 dark:bg-neutral-900/30">
+    <section id="proyek" className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <SectionHeading subtitle="Showcase pekerjaan nyata dan simulasi">Proyek Unggulan</SectionHeading>
         
@@ -656,29 +656,29 @@ const Projects = () => {
                   <img 
                     src={encodeURI(project.thumbnail)} 
                     alt={project.title}
-                    onError={(e) => e.target.src = 'https://placehold.co/800x400/1e293b/white?text=Project+Thumbnail'}
+                    onError={(e: any) => e.target.src = 'https://placehold.co/800x400/1e293b/white?text=Project+Thumbnail'}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 z-20">
-                    <span className="px-3 py-1 bg-white/90 dark:bg-black/80 backdrop-blur-md text-xs font-bold rounded-full uppercase tracking-wider text-neutral-900 dark:text-white">
+                    <span className="px-3 py-1 bg-black/80 backdrop-blur-md text-xs font-bold rounded-full uppercase tracking-wider text-white">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6 md:p-8 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-neutral-600 dark:text-neutral-400 line-clamp-3 mb-6 flex-1">
+                  <p className="text-neutral-400 line-clamp-3 mb-6 flex-1">
                     {project.summary}
                   </p>
                   
-                  <div className="mt-auto pt-4 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+                  <div className="mt-auto pt-4 border-t border-neutral-800 flex items-center justify-between">
                     <div className="flex gap-2 text-neutral-500">
                        <Terminal size={18} /> <Activity size={18} />
                     </div>
-                    <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                    <span className="text-sm font-semibold text-blue-400 flex items-center gap-1">
                       Lihat Detail <ChevronRight size={16} />
                     </span>
                   </div>
@@ -740,7 +740,7 @@ const Certificates = () => (
 );
 
 const Organizations = () => (
-  <section id="organisasi" className="py-24 bg-neutral-50 dark:bg-neutral-900/30">
+  <section id="organisasi" className="py-24">
     <div className="container mx-auto px-6 max-w-4xl">
       <SectionHeading subtitle="Keterlibatan dan kepemimpinan">Pengalaman Organisasi</SectionHeading>
       
@@ -751,14 +751,14 @@ const Organizations = () => (
             variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: index * 0.1 }}
           >
             <GlassCard className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-full bg-indigo-900/30 text-indigo-400 flex items-center justify-center shrink-0">
                 <User size={20} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-neutral-900 dark:text-white">{org.name}</h3>
-                <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-1">{org.role}</p>
+                <h3 className="text-xl font-bold text-white">{org.name}</h3>
+                <p className="text-indigo-400 font-medium mb-1">{org.role}</p>
                 <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-3">{org.period}</p>
-                <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed">
+                <p className="text-neutral-300 text-sm leading-relaxed">
                   {org.desc}
                 </p>
               </div>
