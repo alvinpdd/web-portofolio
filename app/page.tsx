@@ -214,13 +214,13 @@ const SectionHeading = ({ children, subtitle }: any) => (
   </div>
 );
 
-const GlassCard = ({ children, className = "" }) => (
-  <div className={`bg-white/70 dark:bg-neutral-900/50 backdrop-blur-xl border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 md:p-8 shadow-sm transition-all duration-300 hover:shadow-md ${className}`}>
+const GlassCard = ({ children, className = "" }: any) => (
+  <div className={`bg-neutral-900/50 backdrop-blur-xl border border-neutral-800 rounded-3xl p-6 md:p-8 shadow-sm transition-all duration-300 hover:shadow-md ${className}`}>
     {children}
   </div>
 );
 
-const ProjectModal = ({ project, isOpen, onClose }) => {
+const ProjectModal = ({ project, isOpen, onClose }: any) => {
   if (!isOpen || !project) return null;
 
   return (
@@ -237,69 +237,69 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 20, opacity: 0, scale: 0.95 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
+          className="bg-[#0a0a0a] border border-neutral-800 rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
           onClick={(e) => e.stopPropagation()}
         >
           <button 
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors z-10"
+            className="absolute top-4 right-4 p-2 bg-neutral-800 rounded-full hover:bg-neutral-700 transition-colors z-10"
           >
-            <X size={20} className="text-neutral-900 dark:text-white" />
+            <X size={20} className="text-white" />
           </button>
 
-          <div className="relative h-64 md:h-96 w-full bg-neutral-100 dark:bg-neutral-900 overflow-hidden">
+          <div className="relative h-64 md:h-96 w-full bg-neutral-900 overflow-hidden">
              <img 
                src={encodeURI(project.thumbnail)} 
                alt={project.title} 
-               onError={(e) => e.target.src = 'https://placehold.co/800x400/1e293b/white?text=Project+Thumbnail'}
-               className="w-full h-full object-cover opacity-90 mix-blend-overlay dark:mix-blend-normal"
+               onError={(e: any) => e.target.src = 'https://placehold.co/800x400/1e293b/white?text=Project+Thumbnail'}
+               className="w-full h-full object-cover opacity-90 mix-blend-normal"
              />
-             <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-[#0a0a0a] dark:via-[#0a0a0a]/20 to-transparent" />
+             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
              
              <div className="absolute bottom-0 left-0 p-6 md:p-10">
                 <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full uppercase tracking-wider mb-3 inline-block">
                   {project.category}
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-2">{project.title}</h2>
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">{project.title}</h2>
              </div>
           </div>
 
           <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="col-span-1 lg:col-span-2 space-y-8">
               <section>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                   <FileText size={20} className="text-blue-500"/> Gambaran Proyek
                 </h3>
-                <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                <p className="text-neutral-300 leading-relaxed">
                   {project.description}
                 </p>
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                   <Activity size={20} className="text-blue-500"/> Hasil & Implementasi
                 </h3>
                 <div className="space-y-4">
-                  {project.details.map((detail, idx) => (
-                    <div key={idx} className="bg-neutral-50 dark:bg-neutral-800/50 p-4 rounded-2xl border border-neutral-100 dark:border-neutral-800">
-                      <h4 className="font-semibold text-neutral-900 dark:text-white mb-1">{detail.label}</h4>
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400">{detail.value}</p>
+                  {project.details.map((detail: any, idx: number) => (
+                    <div key={idx} className="bg-neutral-800/50 p-4 rounded-2xl border border-neutral-800">
+                      <h4 className="font-semibold text-white mb-1">{detail.label}</h4>
+                      <p className="text-sm text-neutral-400">{detail.value}</p>
                     </div>
                   ))}
                 </div>
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                   <LayoutTemplate size={20} className="text-blue-500"/> Dokumentasi
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {project.images.map((img, idx) => (
-                    <div key={idx} className="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 group cursor-pointer">
+                  {project.images.map((img: string, idx: number) => (
+                    <div key={idx} className="rounded-xl overflow-hidden border border-neutral-800 group cursor-pointer">
                        <img 
                          src={encodeURI(img)} 
                          alt={`Doc ${idx}`} 
-                         onError={(e) => e.target.src = 'https://placehold.co/400x300/1e293b/white?text=Documentation'}
+                         onError={(e: any) => e.target.src = 'https://placehold.co/400x300/1e293b/white?text=Documentation'}
                          className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                        />
                     </div>
@@ -312,8 +312,8 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               <GlassCard className="!p-6">
                 <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-4">Teknologi / Tools</h4>
                 <div className="flex flex-wrap gap-2">
-                  {project.tools.map(tool => (
-                    <span key={tool} className="px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 text-sm rounded-lg border border-neutral-200 dark:border-neutral-700">
+                  {project.tools.map((tool: string) => (
+                    <span key={tool} className="px-3 py-1.5 bg-neutral-800 text-neutral-200 text-sm rounded-lg border border-neutral-700">
                       {tool}
                     </span>
                   ))}
@@ -323,8 +323,8 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               <GlassCard className="!p-6">
                 <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-4">Kompetensi</h4>
                 <ul className="space-y-2">
-                  {project.competencies.map(comp => (
-                    <li key={comp} className="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+                  {project.competencies.map((comp: string) => (
+                    <li key={comp} className="flex items-start gap-2 text-sm text-neutral-300">
                       <ShieldCheck size={16} className="text-blue-500 mt-0.5 shrink-0" />
                       {comp}
                     </li>
@@ -332,9 +332,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 </ul>
               </GlassCard>
 
-              <div className="p-6 bg-blue-50 dark:bg-blue-900/20 rounded-3xl border border-blue-100 dark:border-blue-800/30">
-                <h4 className="text-sm font-semibold text-blue-800 dark:text-blue-300 uppercase tracking-wider mb-2">Status</h4>
-                <p className="text-neutral-900 dark:text-white font-medium">{project.status}</p>
+              <div className="p-6 bg-blue-900/20 rounded-3xl border border-blue-800/30">
+                <h4 className="text-sm font-semibold text-blue-300 uppercase tracking-wider mb-2">Status</h4>
+                <p className="text-white font-medium">{project.status}</p>
               </div>
             </div>
           </div>
